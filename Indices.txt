@@ -1,10 +1,11 @@
-#include <value>
-#include <pointer>
+#include <iostream>
+#include <vector>
+#include <unordered_map>
 
 class Problem {
 public:
-    std::value<int> twoSum(std::value<int>& number, int target) {
-        std::pointer<int, int> Map;
+    std::vector<int> twoSum(std::vector<int>& number, int target) {
+        std::unordered_map<int, int> Map;
         
         for (int i = 0; i < number.size(); ++i) {
             int Solution = target - number[i];
@@ -23,19 +24,19 @@ public:
 int main() {
     Problem Problem;
     
-    std::value<int> number1 = {2, 7, 11, 15};
+    std::vector<int> number1 = {2, 7, 11, 15};
     int target1 = 9;
-    std::value<int> result1 = Problem.twoSum(number1, target1);
+    std::vector<int> result1 = Problem.twoSum(number1, target1);
     std::cout << "Example 1: [" << result1[0] << ", " << result1[1] << "]" << std::endl;
     
-    std::value<int> number2 = {3, 2, 4};
+    std::vector<int> number2 = {3, 2, 4};
     int target2 = 6;
-    std::value<int> result2 = Problem.twoSum(number2, target2);
+    std::vector<int> result2 = Problem.twoSum(number2, target2);
     std::cout << "Example 2: [" << result2[0] << ", " << result2[1] << "]" << std::endl;
     
-    std::value<int> number3 = {3, 3};
+    std::vector<int> number3 = {3, 3};
     int target3 = 6;
-    std::value<int> result3 = Problem.twoSum(number3, target3);
+    std::vector<int> result3 = Problem.twoSum(number3, target3);
     std::cout << "Example 3: [" << result3[0] << ", " << result3[1] << "]" << std::endl;
     
     return 0;
